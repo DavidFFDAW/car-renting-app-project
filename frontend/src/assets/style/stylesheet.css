@@ -1,0 +1,130 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.table-container{
+    width: 75%;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #d6ffdd; /* #ecedf0  */
+    overflow-y: auto;
+}
+.table{
+    float: left;
+    text-align: center;
+    border-collapse: collapse;
+    border-radius: 10px;
+    width: 100%;
+}
+.table thead {
+    /*border: 2px solid cornflowerblue;*/
+    background-color: #289c3a;
+    color: white;
+    font-weight: bold;
+}
+.table thead tr th{
+    border-right: 2px solid white;
+}
+.table thead tr th:last-child{
+    border: none;
+}
+.table tbody{
+    background-color: aliceblue;
+}
+.table tbody tr td{
+    border: 2px solid cornflowerblue;
+    padding: 4px;
+    cursor: default;
+}
+.table tbody tr td:last-child{
+    border-right: none;
+}
+.table tbody tr:hover td{
+    background-color: #0b7ce6;
+    font-weight: bold;
+    color: white;
+}
+.table tbody tr:active td{
+    background-color: #7d9db9;
+}
+.btn-delete{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    /*padding-left: 20px;
+    padding-right: 20px;*/
+    border-radius: 100%;
+    border: 1px solid black;
+    background-color: #ee6767;
+    outline: none;
+    cursor: default;
+    font-weight: bold;
+    color: white;
+}
+.btn-delete:hover{
+    background-color: #800c0c;
+}
+form table tr td:first-child{
+    text-align: right;
+}
+form table tr td.buttons{
+    text-align: center;
+}
+form{
+    width: 20%;
+    padding: 6px;
+    margin-right: 10px;
+    float: left;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+form input{
+    outline: none;
+    cursor: text;
+    border-radius: 15px;
+    text-align: center;
+    padding: 1px;
+    border: 1px solid lightseagreen;
+    margin: 4px;
+}
+form input:hover{
+    border: 3px solid lightseagreen;
+}
+form input:focus{
+    border: 3px solid lightgreen;
+}
+form label{
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #2b3b57;
+    text-align: right;
+}
+form button,
+form input[type="button"],
+form input[type="submit"],
+form input[type="reset"]{
+    width: 75%;
+    border: 1px solid black;
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px black;
+    text-align: center;
+    font-weight: bold;
+    outline: none;
+    border-radius: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-image: linear-gradient(#b9e6eb,cornflowerblue);
+}
+form button:hover,
+form input[type="button"]:hover,
+form input[type="submit"]:hover,
+form input[type="reset"]:hover{
+    background-image: linear-gradient(#aec8f5,#0c46ab);
+}
+form button:active,
+form input[type="button"]:active,
+form input[type="submit"]:active,
+form input[type="reset"]:active{
+    background-image: linear-gradient(#7f92b3,#2b3b57);
+}
