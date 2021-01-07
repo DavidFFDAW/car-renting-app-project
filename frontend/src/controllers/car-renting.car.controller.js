@@ -6,6 +6,7 @@ class CarsController{
 
         this.view.bindPageLoad(this.handlerPageLoad);
         this.view.bindAddButton(this.handlerButtonAdd);
+        this.view.bindUpdateCar(this.handlerUpdateCar);
     }
     drawTableWithDeleteButton = array => this.view.drawTable(array,this.handlerDeleteCar);
 
@@ -67,5 +68,27 @@ class CarsController{
         } catch(error){
             this.view.showError(error);
         }
+    }
+
+    handlerUpdateCar = fields => {
+        try{
+            const car = this.service.findCarByRegistration(fields.registration);
+            const carBeforeUpdate = {registration: car.registration, brand: car.brand, model: car.model, color: car.color};
+            
+            this.service.updateCurrentCar(fields);
+            this.reloadTableAndSelects();
+            this.http.put(HttpService.carsURL,fields)
+                .then(data => {
+                    if(data.error){
+                        this.view.showError(data.error);
+                        this.service.updateCurrentCar(carBeforeUpdate);
+                        this.reloadTableAndSelects();
+                    }
+                })
+                .catch(this.view.showError);
+        } catch(error){
+            this.view.showError(error);
+        }
+
     }
 }
