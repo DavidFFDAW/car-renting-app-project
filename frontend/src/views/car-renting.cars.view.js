@@ -8,6 +8,7 @@ class CarsView extends View{
         this.$inptColor = document.getElementById('inpt-car-color');
         this.$inptGarage= document.getElementById('inpt-car-garage');
         this.$btnAddCar = document.getElementById('btn-car-add');
+        this.$btnUpdateCar = document.getElementById('btn-car-update');
     }
 
     drawTable = (array, handler) => {
@@ -47,6 +48,17 @@ class CarsView extends View{
                 garage: this.$inptGarage.value,
             }
             handler(fields);
+        });
+    }
+    bindUpdateCar(handler){
+        this.$btnUpdateCar.addEventListener('click',ev => {
+            const editFields = {
+                registration: this.$inptRegistration.value,
+                brand: this.$inptBrand.value,
+                model: this.$inptModel.value,
+                color: this.$inptColor.value,
+            };
+            handler(editFields);
         });
     }
 }
