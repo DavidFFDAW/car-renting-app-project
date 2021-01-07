@@ -10,7 +10,6 @@ class CustomersLocalService{
 
     editCustomer = ({ nif, name, address, telephone }) => {
         const customerToBeEdited = this.findCustomerByNIF(nif);
-        console.log('service-customerEditable: ',customerToBeEdited);
         customerToBeEdited.name = name;
         customerToBeEdited.address = address;
         customerToBeEdited.telephone = telephone;
