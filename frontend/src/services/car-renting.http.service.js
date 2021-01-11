@@ -1,8 +1,8 @@
 class HttpService{
 
-    static customersURL = 'http://vps-f87b433e.vps.ovh.net/php-actv/backend/customers/';
-    static carsURL = 'http://vps-f87b433e.vps.ovh.net/php-actv/backend/cars/';
-    static reservationsURL = 'http://vps-f87b433e.vps.ovh.net/php-actv/backend/reservations/';
+    static customersURL = 'http://vps-f87b433e.vps.ovh.net/php-actv/car-renting/backend/customers/';
+    static carsURL = 'http://vps-f87b433e.vps.ovh.net/php-actv/car-renting/backend/cars/';
+    static reservationsURL = 'http://vps-f87b433e.vps.ovh.net/php-actv/car-renting/backend/reservations/';
     
     static instance = new HttpService();
 
