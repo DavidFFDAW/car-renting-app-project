@@ -62,7 +62,11 @@ class CustomersController{
             this.rewriteTablesAndSelect();
             this.http.post(HttpService.customersURL,fieldsObject)
                 .then(data => {
-                    console.log('%cResponseFromServer: '+data.response,'color: black; background-color: lightblue;');
+                    if(data.error){
+                        this.customersView.showError(data.error);
+                        this.customersService.removeCustomerByNIF(fieldsObject.nif);
+                        this.rewriteTablesAndSelect();
+                    }
                 })
                 .catch(this.customersView.showError);
         } catch(error){
